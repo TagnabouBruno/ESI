@@ -12,19 +12,19 @@
 <div class="card col-3 offset-5" style="border:none;">
   <div class="card-body">
     <div class="form-box form-container container">
-      <form class="form" method="POST" action="{{route('registersecretaire')}}">
+      <form class="form" method="POST" action="{{route('update_secretaire', $secretaire->id)}}">
         @csrf
-        @method('post')
+        @method('PUT')
         @if(session()->has('success'))
           <p class="alert alert-info" style="color:green;">{{session()->get('success')}}</p>
         @endif
-        <span class="title">Inscription</span>
-        <span class="subtitle">Ajouter une secretaire</span>
+        <span class="title">Modification</span>
+        <span class="subtitle">Modifier la secretaire</span>
         <div class="form-container">
-          <input type="text" class="input" placeholder="Nom" name="nom" value="{{ old('nom') }}">
-          <input type="text" class="input" placeholder="Prenom" name="prenom" value="{{ old('prenom') }}">
-          <input type="email" class="input" placeholder="Email" name="email" value="{{ old('email') }}">
-          <input type="password" class="input" placeholder="Password" name="password" value="{{ old('password') }}">
+          <input type="text" class="input" placeholder="Nom" name="nom" value="{{ $secretaire->nom }}">
+          <input type="text" class="input" placeholder="Prenom" name="prenom" value="{{ $secretaire->prenom }}">
+          <input type="email" class="input" placeholder="Email" name="email" value="{{ $secretaire->email }}">
+          <input type="password" class="input" placeholder="Password" name="password" value="{{ $secretaire->password }}">
         </div>
        
         <button type="submit">Enregistrer</button>

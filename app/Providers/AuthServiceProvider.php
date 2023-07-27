@@ -2,7 +2,8 @@
 
 namespace App\Providers;
 
-// use Illuminate\Support\Facades\Gate;
+use App\SecretaireGuard;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -21,6 +22,15 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $this->registerPolicies();
+
+        // Utilisez le nom 'secretaire' pour enregistrer votre garde personnalisé
+        Auth::extend('secretaire', function ($app, $name, array $config) {
+            $provider = Auth::createUserProvider($config['provider']);
+            $session = $app['session']->driver();
+            $request = $app['request'];
+
+            return new SecretaireGuard($name, $provider, $session, $request);
+        });
     }
 }

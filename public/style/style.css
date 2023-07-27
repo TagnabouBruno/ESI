@@ -132,6 +132,11 @@ body.fixed .header-fixed .header-limiter nav {
 	}
 
 }
+.logo{
+	position: relative;
+	right:26em;
+	bottom: 0.4em;
+}
 /* style pour le footer */
 
 /* style pour le footer */

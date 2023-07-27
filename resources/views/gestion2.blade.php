@@ -1,4 +1,4 @@
-@extends('layout/gestion')
+@extends('layout/gestion2')
 @section('page-content')
 @if($errors->any())
   <ul class="alert alert-info">

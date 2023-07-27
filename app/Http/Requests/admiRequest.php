@@ -25,7 +25,7 @@ class admiRequest extends FormRequest
         'nom'=>'required|min: 3',
         'prenom'=>'required|min: 3',
         'email'=>'required|email|unique:administrateurs,email',
-        'password'=>'required|min:3 |max:15',
+        'password'=>'required',
         ];
     }
 

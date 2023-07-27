@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\Authenticatable;
-
-class Administrateur extends Model implements Authenticatable
+use Illuminate\Notifications\Notifiable;
+class Secretaire extends Model implements Authenticatable
 {
     use HasFactory;
+    use Notifiable;
 
     protected $fillable = [
         'nom',

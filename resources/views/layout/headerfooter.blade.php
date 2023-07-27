@@ -21,6 +21,7 @@
 </head>
 
 <body>
+	
 
 <header class="header-fixed">
 
@@ -29,23 +30,22 @@
 		<h1><a href="">Gestion<span> Scolaire</span>/ Carte<span> Etudiant</span></a></h1>
 
 		<nav>
-            <a href="{{route('accueil')}}">Accueil</a>
-            <a href="{{route('inscriptionadmi')}}">Inscription</a>
-            <a href="{{route('connectionadmi')}}">Connexion</a>
-			
-			
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary"><a href="{{route('accueil')}}">Accueil</a></button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary"><a href="{{route('inscriptionadmi')}}">Inscription</a></button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary"><a href="{{route('connectionadmi')}}">Connexion</a></button>
+            </div>
 		</nav>
 
 	</div>
 
 </header>
-
-
-
-@yield('page-content')
-
-
-    <footer class="footer">
+		@yield('page-content')
+    <footer class="footer mt-5">
         <div class="icons">
            <a href="#"><i class="fab fa-facebook"></i></a>
            <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -56,50 +56,11 @@
             </p>
         </div>
     </footer>
-
-
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script>
-
-	$(document).ready(function(){
-
-		var showHeaderAt = 150;
-
-		var win = $(window),
-				body = $('body');
-
-		// Show the fixed header only on larger screen devices
-
-		if(win.width() > 400){
-
-			// When we scroll more than 150px down, we set the
-			// "fixed" class on the body element.
-
-			win.on('scroll', function(e){
-
-				if(win.scrollTop() > showHeaderAt) {
-					body.addClass('fixed');
-				}
-				else {
-					body.removeClass('fixed');
-				}
-			});
-
-		}
-
-	});
-
-</script>
-
-
 <!-- Demo ads. Please ignore and remove. -->
 <script src="http://cdn.tutorialzine.com/misc/enhance/v3.js" async></script>
 <script src="{{ asset('js/bootstrap.bundle.min.js')}}"></script>
-
 </body>
-
 </html>
 
 

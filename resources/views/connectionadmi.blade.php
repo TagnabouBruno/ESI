@@ -3,10 +3,10 @@
 <br><br>
 
 
-<div class="row">
-<div class="col"></div>
+<div class="card col-3 offset-5" style="border:none;">
+<div class="card-body"></div>
   <div class="col">
-      <div class="form-box form-container container">
+      <div class="form-box form-container">
         <form class="form" method="post" action="{{route('admilogin')}}">
           @method('post')
           @csrf
